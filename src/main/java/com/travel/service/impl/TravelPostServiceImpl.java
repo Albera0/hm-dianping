@@ -267,6 +267,7 @@ public class TravelPostServiceImpl extends ServiceImpl<TravelPostMapper, TravelP
         List<TravelPostDTO> travelPostDTOS = new ArrayList<>(records.size());
         for (TravelPost travelPost : records) {
             TravelPostDTO travelPostDTO =  TravelPostDTO.builder()
+                    .id(travelPost.getId())
                     .title(travelPost.getTitle())
                     .liked(travelPost.getLiked())
                     .content(travelPost.getContent())

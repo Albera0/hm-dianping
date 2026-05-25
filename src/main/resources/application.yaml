@@ -4,8 +4,9 @@ spring:
   application:
     name: hmdp
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/travel_platform?useSSL=false&serverTimezone=UTC
+    # MySQL 8+ driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/travel_platform?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
     username: root
     password: 912152
   redis:
@@ -21,7 +22,7 @@ spring:
   jackson:
     default-property-inclusion: non_null # JSON处理时忽略非空字段
 mybatis-plus:
-  type-aliases-package: com.travel-platform.entity # 别名扫描包
+  type-aliases-package: com.travel.entity # 别名扫描包
 logging:
   level:
-    com.travel-platform: debug
+    com.travel: debug
